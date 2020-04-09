@@ -1,0 +1,30 @@
+---
+variable name: MJGNperson_info
+use objects: True 
+data:
+  - First name: David
+    Last name: Gavara-Nanu
+    Age: 20
+    Hobbies: Watching Cops and the Sopranos
+    Do you like pets?: True 
+  - First name: Suzie
+    Last name: Gavara-Nanu
+    Age: 20
+    Hobbies: Reading and more reading
+    Do you like pets?: True
+  - First name: Shane
+    Last name: Gavara-Nanu
+    Age: 18 
+    Hobbies: Looking up historic stuff, annoying Mel
+    Do you like pets?: True 
+  - First name: Vasita
+    Last name: Gavara-Nanu 
+    Age: 13
+    Hobbies: Playing piano and violin
+    Do you like pets?: True 
+  - First name: Dane
+    Last name: Gavara-Nanu
+    Age: 6
+    Hobbies: Domino building 
+    Do you like pets?: True 
+---

@@ -1,0 +1,27 @@
+---
+mandatory: True
+code: |
+  MJGNcolumn_header = ""
+  
+  for MJGNitem in MJGNperson_info[0]:
+     MJGNcolumn_header += MJGNitem + '|'
+     
+  MJGNcolumn_header = MJGNcolumn_header[:-1]
+---
+mandatory: True
+code: |
+  MJGNdashes = '---'
+  for i in range (len(MJGNperson_info[0]) -1):
+    MJGNdashes += '|---'
+---
+mandatory: True
+code: |
+  MJGNtable_rows = []
+  
+  for MJGNitem in MJGNperson_info:
+    MDrow = ""
+    for MJGNkey in MJGNitem:
+      MDrow += str(MJGNitem[MJGNkey]) + '|'
+    MDrow = MDrow[:-1]
+    MJGNtable_rows.append(MDrow)
+---

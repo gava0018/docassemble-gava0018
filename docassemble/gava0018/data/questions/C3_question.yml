@@ -1,0 +1,73 @@
+---
+variable name: MJGNquestions
+use objects: True
+data: 
+  - MJGNquestion: Is the information correct for David?
+    MJGNchoices:
+       - First name:David
+       - Last name:Gavara-Nanu
+       - Age:20
+       - Hobbies:Watching Cops and the Sopranos
+       - Do you like pets?:True
+  - MJGNquestion: Is the information correct for Suzie?
+    MJGNchoices:
+       - First name:Suzie
+       - Last name:Gavara-Nanu
+       - Age:20
+       - Hobbies:Reading and more reading 
+       - Do you like pets?:True
+  - MJGNquestion: Is the information for Shane correct?
+    MJGNchoices: 
+       - First name:Shane
+       - Last name:Gavara-Nanu
+       - Age:18
+       - Hobbies:Looking up historic stuff, annoying Mel
+       - Do you like pets?:True
+  - MJGNquestion: Is the information for Vasita correct?
+    MJGNchoices:
+       - First name:Vasita 
+       - Last name:Gavara-Nanu
+       - Age:13
+       - Hobbies:Playing piano and violin 
+       - Do you like pets?:True
+  - MJGNquestion: Is the information for Dane correct?
+    MJGNchoices:
+       - First name:Dane
+       - Last name:Gavara-Nanu
+       - Age:6
+       - Hobbies:Domino building
+       - Do you like pets?:True 
+---
+mandatory: True
+question: Results 
+subquestion: |
+  ### Here is the result of your selections. You can also down a PDF copy of this. 
+  
+  ${ MJGNquestion_table }
+
+attachment: 
+  docx template file: C3_Assessment2.docx
+  file name: C3 Assessment 
+  valid formats:
+    - pdf
+buttons: 
+  - Exit: exit 
+  - Restart: restart
+---
+table: MJGNquestion_table
+rows:  MJGNquestions
+columns:
+  - Question: |
+      row_item['MJGNquestion']
+  - Selected answers: |
+      row_item['MJGNanswers'].true_values()
+  - No. Selected answers: |
+      len(row_item['MJGNanswers'].true_values())
+---
+question: |
+  ${ MJGNquestions[i]['MJGNquestion'] }
+fields:
+  - no label: MJGNquestions[i]['MJGNanswers']
+    datatype: checkboxes
+    code: MJGNquestions[i]['MJGNchoices']
+---
