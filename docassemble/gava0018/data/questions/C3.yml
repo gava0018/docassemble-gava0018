@@ -1,0 +1,26 @@
+---
+include:
+  - C3_code.yml
+  - C3_data_block.yml
+  - C3_question.yml
+---
+mandatory: True 
+question: Data table as a table 
+subquestion: |
+  ### Here is the information collected for each family member. 
+  The information displayed is correct according to your confirmation. 
+  
+  ${ MJGNcolumn_header }
+  ${ MJGNdashes }
+  %for MJGNitem in MJGNtable_rows:
+  ${ MJGNitem }
+  %endfor
+buttons:
+  - Continue: continue
+  - Exit: exit 
+---
+features:
+ css: C4_01_Inf_with_comments.css
+ debug: True
+ hide standard menu: False
+---
